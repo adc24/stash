@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: stash
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: starter
+    autoDeploy: true
+    disk:
+      name: stash-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: STASH_DB_PATH
+        value: /data/stash.db
+      - key: PORT
+        value: "5000"
