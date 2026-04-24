@@ -9,7 +9,7 @@ from urllib.parse import urlparse
 from flask import Flask, jsonify, request, send_from_directory, Response
 from flask_cors import CORS
 
-from backend import database as db
+from . import database as db
 
 # Resolve frontend build directory (frontend/dist) relative to this file.
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
